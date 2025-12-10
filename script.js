@@ -564,8 +564,9 @@ function lights() {
 
 // Arrow Code
 function goUp() {
-  window.location.href = "https://227k25.csb.app/";
+  window.location.href = "https://eternalascenttyler.github.io/FnafReturnOfTheSoulsOffice2/";
 }
 function restart() {
   window.location.href = "";
 }
+
