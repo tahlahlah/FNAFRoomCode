@@ -1,0 +1,347 @@
+/* build your layout */
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-image: url("images/FNAFKitchen.webp");
+  background-repeat: no-repeat;
+  background-position: center; /* keeps the image centered */
+  background-size: cover; /* scales image to fit viewport without cropping */
+  background-color: black;
+}
+
+.StrWire {
+  cursor: url("images/StrCurse.png") 0 0, auto;
+}
+.CurWire {
+  cursor: url("images/CurCurse.png") 0 0, auto;
+}
+.muteButton {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 8;
+  color: white;
+  cursor: pointer;
+}
+.gameOver {
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 30vh;
+}
+.restart {
+  padding: 12px 24px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.bottomKey {
+  max-height: 100%;
+  max-width: 100%;
+  transform: rotate(180deg);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.white-font {
+  color: white;
+  font-size: 50px;
+}
+.red-font {
+  color: red;
+  font-size: 50px;
+}
+
+.row {
+  display: flex;
+  height: 45%;
+  width: 100%;
+}
+.left-column {
+  display: block;
+  height: 100%;
+  width: 10%;
+}
+.middle-column {
+  display: block;
+  height: 100%;
+  width: 30%;
+}
+.right-column {
+  display: block;
+  height: 100%;
+  width: 15%;
+}
+.small-row {
+  height: 15%;
+  width: 100%;
+}
+.med-row {
+  height: 20%;
+  width: 100%;
+}
+img {
+  max-height: 90%;
+  max-width: 90%;
+}
+.cursor:hover {
+  cursor: pointer;
+  transform: scale(1.05, 1.05);
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+.cursor:active {
+  transform: scale(1, 1);
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+
+/* control your content */
+.center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.contain-image {
+  max-height: 70%;
+  max-width: 60%;
+}
+
+.small {
+  max-height: 80%;
+  max-width: 80%;
+}
+.max {
+  height: 100%;
+  width: 100%;
+}
+.crotate-0,
+.strotate-0,
+.rotate-0 {
+  transform: rotate(0deg);
+}
+.crotate-90,
+.strotate-90,
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.cursor-90:hover {
+  transform: scale(1.05, 1.05) rotate(90deg);
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+.cursor-90:active {
+  transform: scale(1, 1) rotate(90deg);
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.cursor-180:hover {
+  transform: scale(1.05, 1.05) rotate(180deg);
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+.cursor-180:active {
+  transform: scale(1, 1) rotate(180deg);
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+
+.rotate-270 {
+  transform: rotate(270deg);
+}
+.cursor-270:hover {
+  transform: scale(1.05, 1.05) rotate(270);
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+.cursor-270:active {
+  transform: scale(1, 1) rotate(270deg);
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+
+.curse:hover {
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+.curse:active {
+  filter: drop-shadow(5px 5px 5px #000000);
+}
+
+.front {
+  z-index: 8;
+}
+
+/* enhance the UX */
+.opaque {
+  opacity: 0.3;
+  cursor: default;
+}
+.column {
+  display: block;
+  height: 100%;
+  width: 20%;
+}
+.boxes {
+  height: calc(100% / 3);
+  width: 100%;
+  outline: 3px solid rgb(125, 0, 0);
+  outline-offset: -3px;
+}
+.box {
+  height: calc(100% / 3);
+  width: 100%;
+}
+.small-boxes {
+  height: 20%;
+  width: 100%;
+  outline: 3px solid rgb(125, 0, 0);
+  outline-offset: -3px;
+}
+.small-box {
+  height: 20%;
+  width: 100%;
+}
+.big-column {
+  height: 100%;
+  width: 50%;
+}
+.half {
+  height: 50%;
+  width: 100%;
+  outline: 3px solid rgb(125, 0, 0);
+  outline-offset: -3px;
+}
+
+.dent {
+  scale: 1.2;
+}
+
+/* colors help visually separate divs */
+.grey {
+  background-color: #a9a9a9;
+}
+.dark-grey {
+  background-color: #707070;
+}
+.black {
+  background-color: black;
+}
+.blood {
+  background-color: #2f0000;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: darkgreen;
+}
+.cardboard {
+  background-color: #a97835;
+}
+
+/* Add a modal pop-up window */
+/* https://en.wikipedia.org/wiki/Modal_window */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.95;
+}
+
+/* Don't cover the entire screen */
+.modal-body {
+  width: 80%;
+  height: 70%;
+  background-color: black;
+  opacity: 1;
+  margin: 0;
+  display: flex;
+}
+
+.Scare {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-image: url("images/Chmicken.gif");
+}
+
+.fill {
+  background-repeat: no-repeat;
+  background-position: center; /* keeps the image centered */
+  background-size: cover; /* scales image to fit viewport without cropping */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Arrow Code */
+
+.uparrow {
+  position: fixed;
+  top: 60px;
+}
+
+.downarrow {
+  position: fixed;
+  bottom: 60px;
+}
+
+.contain-arrow {
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.clickable1 {
+  filter: brightness(50%) drop-shadow(2px 8px 3px);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.clickable1:hover {
+  cursor: pointer;
+  filter: brightness(100%) drop-shadow(2px 8px 3px);
+  transform: scale(1.2);
+}
+.clickable1:active {
+  filter: drop-shadow(0px 0px 3px);
+  transform: scale(0.98);
+}
+
+.contain-minimap {
+  max-height: 300px;
+  max-width: 300px;
+  z-index: -1;
+}
+.moveminimap {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

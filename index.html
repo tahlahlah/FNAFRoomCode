@@ -1,0 +1,455 @@
+aaaaaaaaaaaaa<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kimchen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- inside the body you have your normal layout -->
+    <button class="muteButton red" id="mutes" onclick="muted(this)">Muted</button>
+
+    <div class="left-column">
+      <div class="small-row center">
+        <h1 class="white-font front" id="timer">150</h1>
+      </div>
+      <div class="small-row">
+
+      </div>
+      <div class="small-row">
+        <img
+          src="images/Cardboard_Boxes.png"
+          class="cursor"
+          onclick="showModal(this)"
+          id="0"
+        />
+      </div>
+      <div class="small-row">
+        <img
+          src="images/Cardboard_Boxes.png"
+          class="cursor"
+          onclick="showModal(this)"
+          id="1"
+        />
+      </div>
+      <div class="small-row">
+        <img
+          src="images/Cardboard_Boxes.png"
+          class="cursor"
+          onclick="showModal(this)"
+          id="2"
+        />
+      </div>
+    </div>
+    <div class="left-column">
+      <div class="small-row"></div>
+      <div class="row center">
+        <img src="images/Electric_Box.png" class="cursor contain-image" 
+        onclick="showModal(this)"
+        id="3"/>
+      </div>
+      <div class="small-row"></div>
+    </div>
+
+    <div class="left-column">
+      <div class="small-row">
+        <img src="images/Nothing.png" id="bigKey"/>
+      </div>
+      <div class="small-row"></div>
+      <div class="small-row">
+        <img id="7" class="contain-image cursor" src="images/Hint.png" onclick="showModal(this)"/>
+      </div>
+    </div>
+
+    <div class="left-column">
+      <div class="row"></div>
+      <div class="small-row"></div>
+      <div class="med-row center"></div>
+    </div>
+
+    <div class="right-column">
+      <div class="row"></div>
+      <div class="small-row">
+        <img
+        src="images/Nothing.png"
+        class="contain-arrow uparrow clickable1"
+        id="leave"
+      />
+      </div>
+      <div class="small-row"></div>
+      <div class="med-row center">
+        <img id="6" class="max" src="images/Nothing.png"/>
+      </div>
+    </div>
+
+    <div class="middle-column">
+      <div class="small-row">
+        <img
+        src="images/kitchenminimap.png"
+        class="contain-minimap moveminimap"
+      />
+      </div>
+      <div class="small-row"></div>
+      <div class="med-row center"></div>
+    </div>
+
+    <div class="right-column">
+      <div class="small-row"></div>
+      <div class="small-row"></div>
+      <div class="small-row"></div>
+      <div class="row center">
+        <img src="images/Light_Switched.png" class="cursor contain-image" 
+        onclick="lights()"/>
+      </div>
+    </div>
+
+    <!-- Top Cardboard Box -->
+    <div class="modal center" id="topBox">
+      <span class="close" onclick="hideModal()">&times;</span>
+      <div class="modal-body center">
+
+        <div class="big-column grey">
+          <div class="boxes blood center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes grey center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes blood center">
+            <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="small-box center">
+            <h1 class="white-font" id="straightCount0">0</h1>
+            <img id="straight0" class="cursor" src="images/StraightWire.png" onclick="wireCheck(this)"/>
+          </div>
+        </div>
+
+        <div class="big-column blood">
+          <div class="boxes grey center">
+            <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes black center">
+            <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes grey center">
+            <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)"/>
+          </div>
+          <div class="small-box center">
+            <h1 class="white-font" id="curveCount0">0</h1>
+            <img id="curve0" class="cursor" src="images/CurvedWire.png" onclick="wireCheck(this)"/>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Middle Cardboard Box -->
+    <div class="modal center" id="midBox">
+      <span class="close" onclick="hideModal()">&times;</span>
+      <div class="modal-body center">
+
+<div class="big-column grey">
+          <div class="boxes blood center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes grey center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes blood center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="small-box center">
+            <h1 class="white-font" id="straightCount1">0</h1>
+            <img id="straight1" class="cursor" src="images/StraightWire.png" onclick="wireCheck(this)"/>
+          </div>
+        </div>
+
+        <div class="big-column blood">
+          <div class="boxes grey center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes black center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes grey center">
+            <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)"/>
+          </div>
+          <div class="small-box center">
+            <h1 class="white-font" id="curveCount1">0</h1>
+            <img id="curve1" class="cursor" src="images/CurvedWire.png" onclick="wireCheck(this)"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Cardboard Box -->
+    <div class="modal center" id="botBox">
+      <span class="close" onclick="hideModal()">&times;</span>
+      <div class="modal-body center">
+
+<div class="big-column grey">
+          <div class="boxes blood center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes grey center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="boxes blood center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="small-box center">
+            <h1 class="white-font" id="straightCount2">0</h1>
+            <img id="straight2" class="cursor" src="images/StraightWire.png" onclick="wireCheck(this)"/>
+          </div>
+        </div>
+
+        <div class="big-column blood">
+          <div class="half grey center">
+            <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="half black center">
+            <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
+          </div>
+          <div class="small-box center">
+            <h1 class="white-font" id="curveCount2">0</h1>
+            <img id="curve2" class="cursor" src="images/CurvedWire.png" onclick="wireCheck(this)"/>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+
+      <!-- Electrical Box 1 -->
+      <div class="modal center" id="elecBox3">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div class="modal-body">
+
+          <div class="column">
+            <div id="Start1" class="boxes blood center">
+              <img class="rotate-90 small" src="images/StartWire.png"/>
+            </div>
+
+            <div class="boxes grey center">
+              <img id="wir0" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="boxes grey center">
+              <img id="wir1" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="small-box center">
+              <h1 class="white-font" id="straightCount3">0</h1>
+              <img id="straight3" class="cursor" src="images/StraightWire.png" onclick="wireCheck(this)"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wir2" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="small-box center">
+              <h1 class="white-font" id="curveCount3">0</h1>
+              <img id="curve3" class="cursor" src="images/CurvedWire.png" onclick="wireCheck(this)"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wir3" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="small-box center">
+              <img class="cursor front" src="images/Arrows.png" onclick="lastLevel()"/>
+              <img class="cursor front" src="images/Arrow.png" onclick="nextLevel()"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wir4" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div id="Start2" class="boxes blood center">
+              <img id="wir5" class="rotate-180" src="images/StartWire.png" onclick="" />
+            </div>
+            <div id="button0" class="small-boxes black center cursor" onclick="wireRemoval(this)">
+              <h1 id="remove0" class="red-font">Remove</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+  
+      <!-- Electric Box 2 -->
+      <div class="modal center" id="elecBox2">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div class="modal-body center">
+
+          <div class="column">
+            <div id="Start3" class="boxes blood center">
+              <img class="rotate-90 small" src="images/StartWire.png"/>
+            </div>
+            <div class="boxes grey center">
+              <img id="wire0" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="box"></div>
+            <div class="small-box center">
+              <h1 class="white-font" id="straightCount4">0</h1>
+              <img id="straight4" class="cursor" src="images/StraightWire.png" onclick="wireCheck(this)"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wire1" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="boxes grey center">
+              <img id="wire5" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="small-box center">
+              <h1 class="white-font" id="curveCount4">0</h1>
+              <img id="curve4" class="cursor" src="images/CurvedWire.png" onclick="wireCheck(this)"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wire2" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="boxes grey center">
+              <img id="wire6" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="small-box center">
+              <img class="cursor front" src="images/Arrows.png" onclick="lastLevel()"/>
+              <img class="cursor front" src="images/Arrow.png" onclick="nextLevel()"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wire3" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="box"></div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wire4" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div id="Start4" class="boxes blood center">
+              <img class="rotate-270 small" src="images/StartWire.png" onclick="" />
+            </div>
+            <div id="button1" class="small-boxes black center cursor" onclick="wireRemoval(this)">
+              <h1 id="remove1" class="red-font">Remove</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+       <!-- Electric Box 3 -->
+       <div class="modal center" id="elecBox1">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div class="modal-body center">
+
+          <div class="column">
+            <div id="Start5" class="boxes blood center">
+              <img src="images/StartWire.png"/>
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="small-box center">
+              <h1 class="white-font" id="straightCount5">0</h1>
+              <img id="straight5" class="cursor" src="images/StraightWire.png" onclick="wireCheck(this)"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="boxes grey center">
+              <img id="wore0" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="small-box center">
+              <h1 class="white-font" id="curveCount5">0</h1>
+              <img id="curve5" class="cursor" src="images/CurvedWire.png" onclick="wireCheck(this)"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="boxes grey center">
+              <img id="wore1" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="boxes grey center">
+              <img id="wore2" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="box"></div>
+            <div class="small-box center">
+              <img class="cursor front" src="images/Arrows.png" onclick="lastLevel()"/>
+              <img class="cursor front" src="images/Arrow.png" onclick="nextLevel()"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"></div>
+            <div class="boxes grey center">
+              <img id="wore3" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+            <div class="boxes grey center">
+              <img id="wore4" class="cursor rotate-0" src="images/Nothing.png" onclick="addWires(this)" />
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="box"> </div>
+            <div class="box"></div>
+            <div id="Start6" class="boxes blood center">
+              <img  class="rotate-180 " src="images/StartWire.png" onclick="" />
+            </div>
+            <div id="button2" class="small-boxes black center cursor" onclick="wireRemoval(this)">
+              <h1 id="remove2" class="red-font">Remove</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+             <!-- Hint Modal -->
+      <div class="modal center" id="hintModal">
+        <span class="close" onclick="hideModal()">&times;</span>
+          <div class="modal-body center">
+          <img src="images/PostItDirections.png"/>
+          <img src="images/HintBack.png"/>
+        </div>
+      </div>
+
+             <!-- Jumpscare Modal -->
+      <div class="Scare center fill" id="jumpScareModal">
+        <div class="gameOver">GAME OVER<br /><br />
+        <button onclick="restart()" class="restart">Restart</button></div>
+      </div>
+
+    </body>
+
+  <audio src="sounds/Chica_Jumpscare.mp3" type="mp3" id="jumps"></audio>
+  <audio src="sounds/key.mp3" type="mp3" id="bread"></audio>
+  <script src="script.js"></script>
+</html>
+
+
+<!--onmouseenter="goRight()"
