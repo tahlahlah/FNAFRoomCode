@@ -419,6 +419,22 @@ function checkConnect() {
 }
 
 function checkRotation() {
+    for (let p = 0; p < fakeBox.length; p++) {
+    const checks = document.getElementById("wire" + p);
+    if (!checks.classList.contains(fakeBox[p])) {
+      // sets the success flag to false and stops the loop
+      fake = false;
+      fakeColor();
+      sparks = 2;
+      sparkVolume();
+      break;
+    } else {
+      fake = true;
+      fakeColor();
+      sparks = 1;
+      sparkVolume();
+    }
+  }
   for (let e = 0; e < rotationsbox1.length; e++) {
     const check = document.getElementById("wir" + e);
     if (!check.classList.contains(rotationsbox1[e])) {
@@ -463,22 +479,6 @@ function checkRotation() {
     } else {
       box3 = true;
       changeColors();
-      sparks = 1;
-      sparkVolume();
-    }
-  }
-  for (let p = 0; p < fakeBox.length; p++) {
-    const checks = document.getElementById("wire" + p);
-    if (!checks.classList.contains(fakeBox[p])) {
-      // sets the success flag to false and stops the loop
-      fake = false;
-      fakeColor();
-      sparks = 2;
-      sparkVolume();
-      break;
-    } else {
-      fake = true;
-      fakeColor();
       sparks = 1;
       sparkVolume();
     }
@@ -569,4 +569,5 @@ function goUp() {
 function restart() {
   window.location.href = "";
 }
+
 
