@@ -54,8 +54,8 @@ var removal = false;
 var box1 = false;
 var box2 = false;
 var box3 = false;
-var timer = 150;
-var count = true;
+var timer = 180;
+var count = false;
 var sparks = 2;
 var mute = true;
 
@@ -70,6 +70,14 @@ let clock = setInterval(function () {
   }
 }, 1000);
 
+document.getElementById("Instructions").style.display = "flex";
+
+function start() {
+  document.getElementById("Instructions").style.display = "none";
+  count = true;
+  muted(document.getElementById("mutes"))
+}
+
 function jumpScawe() {
   document.body.style.backgroundImage = "url('images/Chmicken.gif')";
   document.getElementById("jumpScareModal").style.display = "flex";
@@ -80,7 +88,7 @@ function jumpScawe() {
 
 let sound = new Audio("sounds/ambience.wav");
 function ambience() {
-  sound.volume = 0.8;
+  sound.volume = 0.4;
   sound.loop = true;
   if (mute == false) {
     sound.play();
@@ -111,15 +119,15 @@ function electricity() {
 
 function sparkVolume() {
   if (sparks == 2) {
-    spark.volume = 0.6;
+    spark.volume = 0.4;
   } else if (sparks == 1) {
-    spark.volume = 0.2;
+    spark.volume = 0.1;
   }
 }
 
 function muted(choose) {
   if (mute == true) {
-    choose.innerHTML = "UnMuted";
+    choose.innerHTML = "Not Muted";
     mute = false;
     choose.setAttribute("class", "muteButton green");
     ambience();
@@ -419,22 +427,6 @@ function checkConnect() {
 }
 
 function checkRotation() {
-    for (let p = 0; p < fakeBox.length; p++) {
-    const checks = document.getElementById("wire" + p);
-    if (!checks.classList.contains(fakeBox[p])) {
-      // sets the success flag to false and stops the loop
-      fake = false;
-      fakeColor();
-      sparks = 2;
-      sparkVolume();
-      break;
-    } else {
-      fake = true;
-      fakeColor();
-      sparks = 1;
-      sparkVolume();
-    }
-  }
   for (let e = 0; e < rotationsbox1.length; e++) {
     const check = document.getElementById("wir" + e);
     if (!check.classList.contains(rotationsbox1[e])) {
@@ -456,13 +448,13 @@ function checkRotation() {
     if (!check.classList.contains(rotationsbox2[e])) {
       // sets the success flag to false and stops the loop
       box2 = false;
-      changeColors();
+      fakeColor();
       sparks = 2;
       sparkVolume();
       break;
     } else {
       box2 = true;
-      changeColors();
+      fakeColor();
       sparks = 1;
       sparkVolume();
     }
@@ -479,6 +471,22 @@ function checkRotation() {
     } else {
       box3 = true;
       changeColors();
+      sparks = 1;
+      sparkVolume();
+    }
+  }
+  for (let p = 0; p < fakeBox.length; p++) {
+    const checks = document.getElementById("wire" + p);
+    if (!checks.classList.contains(fakeBox[p])) {
+      // sets the success flag to false and stops the loop
+      fake = false;
+      fakeColor();
+      sparks = 2;
+      sparkVolume();
+      break;
+    } else {
+      fake = true;
+      fakeColor();
       sparks = 1;
       sparkVolume();
     }
@@ -509,11 +517,16 @@ function changeColors() {
 }
 
 function fakeColor() {
-  if (wires2 == 5 && fake == true) {
-    document.getElementById("Start3").classList.remove("blood");
+  if (box2 === true) {
     document.getElementById("Start3").classList.add("green");
-    document.getElementById("Start4").classList.remove("blood");
+    document.getElementById("Start3").classList.remove("blood");
     document.getElementById("Start4").classList.add("green");
+    document.getElementById("Start4").classList.remove("blood");
+  } else if (fake === true && wires2 === 5) {
+    document.getElementById("Start3").classList.add("green");
+    document.getElementById("Start3").classList.remove("blood");
+    document.getElementById("Start4").classList.add("green");
+    document.getElementById("Start4").classList.remove("blood");
   } else {
     document.getElementById("Start3").classList.remove("green");
     document.getElementById("Start3").classList.add("blood");
@@ -531,6 +544,7 @@ function removeKey(choose) {
     choose.classList.remove("cursor");
     document.getElementById("leave").setAttribute("onclick", "goUp()");
     document.getElementById("leave").src = "images/uparrow.png";
+    document.getElementById("leave").classList.add("clickable1");
   }
 }
 
@@ -539,15 +553,15 @@ function lights() {
   if (connected == true) {
     if (document.body.style.backgroundImage.match("Bright")) {
       document.body.style.backgroundImage = "url('images/FNAFKitchen.webp')";
-      document.getElementById("6").src = "images/Nothing.png";
-      document.getElementById("6").classList.remove("cursor");
+      document.getElementById("7").src = "images/Nothing.png";
+      document.getElementById("7").classList.remove("cursor");
       count = true;
     } else {
       document.body.style.backgroundImage =
         "url('images/FNAFKitchenBright.jpg')";
-      document.getElementById("6").src = "images/KEY.png";
-      document.getElementById("6").classList.add("cursor");
-      document.getElementById("6").setAttribute("onclick", "removeKey(this)");
+      document.getElementById("7").src = "images/KEY.png";
+      document.getElementById("7").classList.add("cursor");
+      document.getElementById("7").setAttribute("onclick", "removeKey(this)");
       count = false;
       document.body.style.backgroundColor = "white";
     }
@@ -569,6 +583,3 @@ function goUp() {
 function restart() {
   window.location.href = "";
 }
-
-
-
