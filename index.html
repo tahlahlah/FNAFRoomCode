@@ -12,7 +12,7 @@
 
     <div class="left-column">
       <div class="small-row center">
-        <h1 class="white-font front" id="timer">150</h1>
+        <h1 class="white-font front" id="timer">180</h1>
       </div>
       <div class="small-row">
 
@@ -73,13 +73,13 @@
       <div class="small-row">
         <img
         src="images/Nothing.png"
-        class="contain-arrow uparrow clickable1"
+        class="contain-arrow uparrow"
         id="leave"
       />
       </div>
       <div class="small-row"></div>
       <div class="med-row center">
-        <img class="max" src="images/Nothing.png"/>
+        <img id="7" class="max" src="images/Nothing.png"/>
       </div>
     </div>
 
@@ -107,16 +107,16 @@
     <!-- Top Cardboard Box -->
     <div class="modal center" id="topBox">
       <span class="close" onclick="hideModal()">&times;</span>
-      <div class="modal-body center">
+      <div class="modal-body outline center">
 
-        <div class="big-column grey">
-          <div class="boxes blood center">
+        <div class="big-column cardboard">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes grey center">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes blood center">
+          <div class="box center">
             <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
           </div>
           <div class="small-box center">
@@ -125,14 +125,14 @@
           </div>
         </div>
 
-        <div class="big-column blood">
-          <div class="boxes grey center">
+        <div class="big-column cardboard">
+          <div class="box center">
             <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes black center">
+          <div class="box center">
             <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes grey center">
+          <div class="box center">
             <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)"/>
           </div>
           <div class="small-box center">
@@ -147,16 +147,16 @@
     <!-- Middle Cardboard Box -->
     <div class="modal center" id="midBox">
       <span class="close" onclick="hideModal()">&times;</span>
-      <div class="modal-body center">
+      <div class="modal-body outline center">
 
-<div class="big-column grey">
-          <div class="boxes blood center">
+<div class="big-column cardboard">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes grey center">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes blood center">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
           <div class="small-box center">
@@ -165,14 +165,14 @@
           </div>
         </div>
 
-        <div class="big-column blood">
-          <div class="boxes grey center">
+        <div class="big-column cardboard">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes black center">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes grey center">
+          <div class="box center">
             <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)"/>
           </div>
           <div class="small-box center">
@@ -187,16 +187,16 @@
     <!-- Bottom Cardboard Box -->
     <div class="modal center" id="botBox">
       <span class="close" onclick="hideModal()">&times;</span>
-      <div class="modal-body center">
+      <div class="modal-body outline center">
 
-<div class="big-column grey">
-          <div class="boxes blood center">
+<div class="big-column cardboard">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes grey center">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="boxes blood center">
+          <div class="box center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
           <div class="small-box center">
@@ -205,11 +205,11 @@
           </div>
         </div>
 
-        <div class="big-column blood">
-          <div class="half grey center">
+        <div class="big-column cardboard">
+          <div class="half center">
             <img class="cursor" src="images/CurvedWire.png" onclick="grabWires(this)" />
           </div>
-          <div class="half black center">
+          <div class="half center">
             <img class="cursor" src="images/StraightWire.png" onclick="grabWires(this)" />
           </div>
           <div class="small-box center">
@@ -416,7 +416,7 @@
           </div>
 
           <div class="column">
-            <div class="box"> </div>
+            <div class="box"></div>
             <div class="box"></div>
             <div id="Start6" class="boxes blood center">
               <img  class="rotate-180 " src="images/StartWire.png" onclick="" />
@@ -432,9 +432,16 @@
              <!-- Hint Modal -->
       <div class="modal center" id="hintModal">
         <span class="close" onclick="hideModal()">&times;</span>
-          <div class="modal-body center">
-          <img src="images/PostItDirections.png"/>
-          <img src="images/HintBack.png"/>
+          <div class="modal-body">
+            <div class="block">
+              <div class="eighty center">
+                <img src="images/PostItDirections.png"/>
+                <img src="images/HintBack.png"/>
+              </div>
+              <div class="twenty center">
+                <h1 class="white-font">You Should Have 0 Wires Remaining!!!</h1>
+              </div>
+          </div>
         </div>
       </div>
 
@@ -442,6 +449,11 @@
       <div class="Scare center fill" id="jumpScareModal">
         <div class="gameOver">GAME OVER<br /><br />
         <button onclick="restart()" class="restart">Restart</button></div>
+      </div>
+
+                   <!-- Instruction Modal -->
+      <div class="Guide center fill" id="Instructions">
+        <button onclick="start()" class="restart">Start</button></div>
       </div>
 
     </body>
